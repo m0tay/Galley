@@ -30,20 +30,27 @@ Built for authors writing technical books in Typst who want a fast iterative loo
 
 ## Installation
 
-### Option A — Download the app (fastest)
+### Option A — DMG installer (recommended)
 
 1. Go to [**Releases**](https://github.com/m0tay/Galley/releases/latest)
-2. Download **`Galley-v1.0.0-macOS.zip`**
-3. Unzip and drag **Galley.app** to `/Applications`
-4. **Remove the quarantine flag** (required for unsigned apps):
+2. Download **`Galley-v1.0.0-macOS.dmg`**
+3. Open the DMG — drag **Galley.app** onto the **Applications** folder
+4. **Remove the quarantine flag** (one-time, required for unsigned apps):
    ```bash
    xattr -cr /Applications/Galley.app
    ```
 5. Open **Galley.app** from `/Applications`
 
-> **Why step 4?** macOS Gatekeeper quarantines apps downloaded from the internet. Since Galley is not notarized with an Apple Developer certificate, you must clear the quarantine attribute before the first launch. This is a one-time step.
+> **Why step 4?** macOS Gatekeeper quarantines files downloaded from the internet. Since Galley is not notarized with an Apple Developer certificate, you must clear the quarantine attribute before the first launch.
 
-### Option B — Build from source
+### Option B — Download the zip
+
+1. Go to [**Releases**](https://github.com/m0tay/Galley/releases/latest)
+2. Download **`Galley-v1.0.0-macOS.zip`**
+3. Unzip and drag **Galley.app** to `/Applications`
+4. Run `xattr -cr /Applications/Galley.app` then open the app
+
+### Option C — Build from source
 
 ```bash
 git clone https://github.com/m0tay/Galley.git
@@ -53,7 +60,7 @@ swift build -c release
 
 The binary is at `.build/release/Galley`. Run it directly or create an app bundle (see below).
 
-### Option C — Build an app bundle
+### Option D — Build an app bundle
 
 ```bash
 git clone https://github.com/m0tay/Galley.git
