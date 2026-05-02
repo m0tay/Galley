@@ -3,6 +3,7 @@
   <img src="https://img.shields.io/badge/swift-5.10+-F05138?logo=swift&logoColor=white" alt="Swift 5.10+">
   <img src="https://img.shields.io/badge/typst-required-239DAD" alt="Typst">
   <img src="https://img.shields.io/github/license/m0tay/Galley?color=blue" alt="License">
+  <img src="https://img.shields.io/badge/vibe-coded_%F0%9F%8E%B6-ff69b4" alt="Vibe Coded">
 </p>
 
 # Galley
@@ -30,52 +31,49 @@ Built for authors writing technical books in Typst who want a fast iterative loo
 
 ## Installation
 
-### Option A — DMG installer (recommended)
+### Option A — One-line install (recommended)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/m0tay/Galley/main/install.sh | bash
+```
+
+This downloads, installs to `/Applications`, and clears the macOS quarantine flag automatically.
+
+### Option B — DMG installer
 
 1. Go to [**Releases**](https://github.com/m0tay/Galley/releases/latest)
 2. Download **`Galley-v1.0.0-macOS.dmg`**
 3. Open the DMG — drag **Galley.app** onto the **Applications** folder
-4. **Remove the quarantine flag** (one-time, required for unsigned apps):
+4. **Clear quarantine** (one-time, required for unsigned apps):
    ```bash
    xattr -cr /Applications/Galley.app
    ```
-5. Open **Galley.app** from `/Applications`
+5. Open **Galley.app**
 
-> **Why step 4?** macOS Gatekeeper quarantines files downloaded from the internet. Since Galley is not notarized with an Apple Developer certificate, you must clear the quarantine attribute before the first launch.
+### Option C — Download the zip
 
-### Option B — Download the zip
+1. Download **`Galley-v1.0.0-macOS.zip`** from [Releases](https://github.com/m0tay/Galley/releases/latest)
+2. Unzip and drag **Galley.app** to `/Applications`
+3. Clear quarantine and open:
+   ```bash
+   xattr -cr /Applications/Galley.app
+   open /Applications/Galley.app
+   ```
 
-1. Go to [**Releases**](https://github.com/m0tay/Galley/releases/latest)
-2. Download **`Galley-v1.0.0-macOS.zip`**
-3. Unzip and drag **Galley.app** to `/Applications`
-4. Run `xattr -cr /Applications/Galley.app` then open the app
-
-### Option C — Build from source
-
-```bash
-git clone https://github.com/m0tay/Galley.git
-cd Galley
-swift build -c release
-```
-
-The binary is at `.build/release/Galley`. Run it directly or create an app bundle (see below).
-
-### Option D — Build an app bundle
+### Option D — Build from source
 
 ```bash
 git clone https://github.com/m0tay/Galley.git
 cd Galley
 swift build -c release
-
-# Create .app bundle
-mkdir -p Galley.app/Contents/MacOS
-cp .build/release/Galley Galley.app/Contents/MacOS/
-cp Info.plist Galley.app/Contents/    # if you have one, or omit
-
-# Move to Applications
-mv Galley.app /Applications/
-open /Applications/Galley.app
+.build/release/Galley
 ```
+
+> [!IMPORTANT]
+> **macOS Gatekeeper notice:** Galley is not notarized with an Apple Developer certificate.
+> When installing via DMG or zip, macOS will show **"Galley.app is damaged"** until you clear
+> the quarantine flag with `xattr -cr /Applications/Galley.app`. The one-line installer
+> (Option A) handles this automatically. Building from source (Option D) avoids the issue entirely.
 
 ---
 
@@ -108,7 +106,7 @@ If Typst is not found, the app shows a helpful error on launch.
 # Run from source
 swift run Galley
 
-# Or launch the .app
+# Or launch the installed app
 open /Applications/Galley.app
 ```
 
@@ -215,10 +213,10 @@ Snapshot tests compile real Typst code and verify the output is valid PDF. They 
 
 ## License
 
-MIT
+[MIT](LICENSE)
 
 ---
 
 <p align="center">
-  <sub>Built with Swift and ☕ — for authors who think in Typst.</sub>
+  <sub>Vibe coded with <a href="https://claude.ai">Claude</a>, Swift, and mass amounts of ☕ — for authors who think in Typst.</sub>
 </p>
