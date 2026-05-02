@@ -1,0 +1,33 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+*.xcodeproj/
+DerivedData/
+
+# Xcode
+*.pbxproj
+*.xcworkspace/
+xcuserdata/
+*.xcodeproj/
+
+# macOS
+.DS_Store
+*.dSYM/
+
+# IDE
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local environment
+.env
+.env.local
+*.local.json
+
+# App artifacts
+*.app/
+build/
+
+# Test artifacts
+.coverage/
