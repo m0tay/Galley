@@ -2,7 +2,7 @@
   <img src="https://img.shields.io/badge/platform-macOS_12+-333?logo=apple&logoColor=white" alt="macOS 12+">
   <img src="https://img.shields.io/badge/swift-5.10+-F05138?logo=swift&logoColor=white" alt="Swift 5.10+">
   <img src="https://img.shields.io/badge/typst-required-239DAD" alt="Typst">
-  <img src="https://img.shields.io/github/license/m0tay/Galley?color=blue" alt="License">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License">
   <img src="https://img.shields.io/badge/vibe-coded_%F0%9F%8E%B6-ff69b4" alt="Vibe Coded">
 </p>
 
